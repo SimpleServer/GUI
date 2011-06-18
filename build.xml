@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="release" name="Create Runnable Jar for SimpleServer GUI">
+  <target name="release" depends="clean, create-release-jar" />
+
+  <target name="create-release-jar">
+    <jar destfile="GUI.jar">
+      <manifest>
+        <attribute name="Main-Class" value="simpleserver.gui.Main"/>
+        <attribute name="Class-Path" value=". SimpleServer.jar"/>
+      </manifest>
+
+      <fileset dir="bin"/>
+    </jar>
+  </target>
+
+  <target name="clean">
+    <delete file="GUI.jar" />
+  </target>
+</project>
